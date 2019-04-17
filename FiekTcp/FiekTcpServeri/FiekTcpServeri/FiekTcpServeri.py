@@ -5,6 +5,7 @@ from _thread import *
 import sys
 import time
 import random
+import math
 
 print("--------------------Miresevini--------------------")
 sPort = 12000
@@ -26,6 +27,7 @@ while True:
     def IPADRESA(): 
            try:
               print('Kerkesa eshte te dergohet Ip adresa e klientit!')
+              
               Konektimi.send(str("IP Adresa e klientit eshte " +str(clientAddress[0])).encode('utf-8'))
               print('---Klienti ka pranuar pergjigjjen---\n\n')
            except:
@@ -63,10 +65,10 @@ while True:
                print('Funksioni ka ndalur,provoni perseri\n\n')
 
     
-    def HOST():
+    def EMRIIHOSTIT():
       try:
           print('Kerkesa eshte te dergohet emri i hostit!')
-          hosti = gethostbyname(gethostname())
+          hosti = gethostname()
           if (hosti==' '):
             Konektimi.send(str("Emri i hostit nuk mund te gjendet.").encode('utf-8'))
           else:
@@ -145,30 +147,23 @@ while True:
         print('Funksioni ka ndalur,provoni perseri\n\n')
      
    
-    def NRTHJESHTE(p):
-     try:
-         print('Kerkesa eshte te tregohet se a eshte numri i caktuar numer i thjeshte!\n')
-         n = int(p)
-         if (n ==1 ):
-            return Konektimi.send(("Numri eshte numer i thjeshte.").encode('utf-8'))
-         elif (n ==2):
-            return Konektimi.send(("Numri eshte numer  i thjeshte.").encode('utf-8'))
-         else:
-            for i in range(2,n):
-                if(n%i):
-                     return Konektimi.send(("Eshte numer i thjeshte.").encode('utf-8'))
-                else:#"Eshte numer i thjeshte."
-                     return Konektimi.send(("Nuk eshte numer i thjeshte.").encode('utf-8'))
-            
-         print('---Klienti ka pranuar pergjigjjen---\n\n')
-     except:
-            print('Funksioni ka ndalur,provoni perseri\n\n')
+ 
     def PERIMETRI(r):
         try:
              print('Kerkesa eshte te tregohet perimetri varesisht nga rrezja e dhene!')
              rrezja = float (r)
              perimetri = 2*pi*rrezja;
-             Konektimi.send(str("Faktoriel i numrit te kerkuar eshte " +str(perimetri)).encode('utf-8'))
+             Konektimi.send(str("Perimetri i numrit te kerkuar eshte " +str(perimetri)).encode('utf-8'))
+             print('---Klienti ka pranuar pergjigjjen---\n\n')
+        except:
+            print('Funksioni ka ndalur,provoni perseri\n\n')
+
+    def KATRORINR(n):
+        try:
+             print('Kerkesa eshte te tregohet katrori i numrit!')
+             nr = int (n)
+             katrori=math.pow(nr,2)
+             Konektimi.send(str("katrori i numrit te kerkuar eshte " +str(katrori)).encode('utf-8'))
              print('---Klienti ka pranuar pergjigjjen---\n\n')
         except:
             print('Funksioni ka ndalur,provoni perseri\n\n')
@@ -188,8 +183,8 @@ while True:
         IPADRESA()
     elif (funks=="NUMRIIPORTIT"):
         NUMRIIPORTIT()
-    elif (funks=="HOST"):
-        HOST()
+    elif (funks=="EMRIIHOSTIT"):
+        EMRIIHOSTIT()
     elif (funks=="KOHA"):
         KOHA()
     elif(funks=="LOJA"):
@@ -198,10 +193,10 @@ while True:
         BASHKETINGELLORE()
     elif(funks== "PRINTIMI"):
         PRINTIMI()
-    elif(funks=="NRTHJESHTE"):
-        NRTHJESHTE(teksti)
     elif(funks=="PERIMETRI"):
         PERIMETRI(teksti)
+    elif(funks=="KATRORINR"):
+        KATRORINR(teksti)
     elif(funks=="FIBONACCI"):
         FIBONACCI(teksti)
     else:
