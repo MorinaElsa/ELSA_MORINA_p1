@@ -13,7 +13,7 @@ kerkesa=input('IPADRESA - per paraqijen e  IP adreses se klientit.\n'
 'Formati:BASHKETINGELLORE hapesire teksti per te cilin deshironi te gjeni numrin e bashketingelloreve.\n'
 'PRINTIMI - per paraqitjen e fjalise se shtypur ne tekst.\n'
 'Formati:PRINTIMI hapesire  fjalia qe deshironi ta printoni\n'
-'HOST - per paraqitjen e emrit te hostit.\n'
+'EMRIIHOSTIT - per paraqitjen e emrit te hostit.\n'
 'KOHA - per paraqitjen e kohes aktuale ne server. \n'
 'LOJA - Paraqet 7 numra nga rangu[1,49].\n'
 'FIBONACCI - paraqitje e numrit FIBONACCI, si rezultat i parametrit te dhene hyres.\n'
@@ -26,10 +26,11 @@ kerkesa=input('IPADRESA - per paraqijen e  IP adreses se klientit.\n'
 '\t\GallonsToLiters\n'
 '\t\LitersToGallons\n'
 'Formati:KONVERTIMI hapesire lloji i konvertimit dhe numrin si vlere per tu konvertuar.\n'
-'NRTHJESHTE - Tregon nese numri i dhene eshte numer primar.\n'
-'Formati:NRTHJESHTE hapsire numrin per te ditur nese eshte primar apo jo.\n'
+'KATRORINR - Tregon katrorin e numrit te kerkuar.\n'
+'Formati:KATRORINR hapsire numrin qe deshironi te dini katrorin e tij.\n'
 'PERIMETRI - Paraqet perimetrin e rrethit.\n'
-'Formati:PERIMETRI hapsire vleren per rrezen qe deshironi te dini perimetrin.\n')
+'Formati:PERIMETRI hapsire vleren per rrezen qe deshironi te dini perimetrin.\n'
+'shtypni MBYLLE per te ndalur programin')
 
 
 while True:
