@@ -24,9 +24,13 @@ while True:
     
     def IPADRESA(): 
            try:
-             
-              socketServer.sendto(str("IP Adresa e klientit eshte:" +str(clientAddress[0]) + str("\n")).encode('utf-8') , clientAddress)
-              print('---Klienti ka pranuar pergjigjjen---\n\n')
+               
+               adresa = gethostbyname(gethostname())
+               if (adresa==' '):
+                   socketServer.sendto(str("Adresa nuk eshte gjetur: " + str("\n")).encode('utf-8') , clientAddress)
+               else:
+                   socketServer.sendto(str("Adresa eshte: " +str(adresa) + str("\n")).encode('utf-8') , clientAddress)
+                   print('---Klienti ka pranuar pergjigjjen---\n\n')
            except:
                print('Funksioni ka ndalur,provoni perseri\n\n')
 
