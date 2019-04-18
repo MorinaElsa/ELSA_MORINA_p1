@@ -25,16 +25,21 @@ while True:
     kerkesa = message.decode('utf-8').split(' ')
     
     def IPADRESA(): 
-           try:
-              print('Kerkesa eshte te dergohet Ip adresa e klientit!')
-              
-              Konektimi.send(str("IP Adresa e klientit eshte " +str(clientAddress[0])).encode('utf-8'))
-              print('---Klienti ka pranuar pergjigjjen---\n\n')
-           except:
+       try:
+              print('Kerkesa eshte te dergohet Ip adresa!')
+              adresa = gethostbyname(gethostname())
+              if (adresa==' '):
+                Konektimi.send(str("Adresa nuk mund te gjendet.").encode('utf-8'))
+              else:
+                Konektimi.send(str("Adresa eshte: " + adresa).encode('utf-8'))
+                print('---Klienti ka pranuar pergjigjjen---\n\n')
+       except:
                print('Funksioni ka ndalur,provoni perseri\n\n')
+
+           
     def NUMRIIPORTIT():
         try:
-             print('Kerkesa eshte te dergohet Ip adresa e klientit!')
+             print('Kerkesa eshte te dergohet numri i portit!')
              Konektimi.send(str(str(clientAddress[1])).encode('utf-8'))
              print('---Klienti ka pranuar pergjigjjen---\n\n')
         except:
